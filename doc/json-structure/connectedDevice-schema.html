@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang=en> <head><link rel=stylesheet type=text/css href="https://fonts.googleapis.com/css?family=Overpass:300,400,600,800"><script src=https://code.jquery.com/jquery-3.4.1.min.js integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T crossorigin=anonymous><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js integrity=sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM crossorigin=anonymous></script><style>body {
+  font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+  color: #333;
+  font-weight: 300;
+  padding: 40px;
+}
+
+.btn.btn-link {
+    font-size: 18px;
+}
+
+.jsfh-animated-property {
+    animation: eclair;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-duration: .75s;
+
+}
+
+@keyframes eclair {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+.btn.btn-primary {
+    margin: 10px;
+}
+
+.btn.example-show.collapsed:before {
+    content: "show"
+}
+
+.btn.example-show:before {
+    content: "hide"
+}
+
+.description.collapse:not(.show) {
+    max-height: 100px !important;
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.description.collapsing {
+    min-height: 100px !important;
+}
+
+.collapse-description-link.collapsed:after  {
+    content: '+ Read More';
+}
+
+.collapse-description-link:not(.collapsed):after {
+    content: '- Read Less';
+}
+
+.badge {
+    font-size: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.badge.value-type {
+    font-size: 120%;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+
+.badge.default-value {
+    font-size: 120%;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.badge.restriction {
+    display: inline-block;
+}
+
+.badge.required-property,.badge.deprecated-property,.badge.pattern-property,.badge.no-additional {
+    font-size: 100%;
+    margin-left: 10px;
+}
+
+.accordion div.card:only-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.examples {
+    padding: 1rem !important;
+}
+
+.highlight.jumbotron {
+    padding: 1rem !important;
+}
+
+.generated-by-footer {
+    margin-top: 1em;
+    text-align: right;
+}
+
+/* From https://github.com/richleland/pygments-css/blob/master/friendly.css, see https://github.com/trentm/python-markdown2/wiki/fenced-code-blocks */
+.highlight  { background: #e9ecef; } /* Changed from #f0f0f0 in the original style to be the same as bootstrap's jumbotron */
+.highlight .hll { background-color: #ffffcc }
+.highlight .c { color: #60a0b0; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #007020; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #60a0b0; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #007020 } /* Comment.Preproc */
+.highlight .cpf { color: #60a0b0; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #007020 } /* Keyword.Pseudo */
+.highlight .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #902000 } /* Keyword.Type */
+.highlight .m { color: #40a070 } /* Literal.Number */
+.highlight .s { color: #4070a0 } /* Literal.String */
+.highlight .na { color: #4070a0 } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.highlight .no { color: #60add5 } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #007020 } /* Name.Exception */
+.highlight .nf { color: #06287e } /* Name.Function */
+.highlight .nl { color: #002070; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #bb60d5 } /* Name.Variable */
+.highlight .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #40a070 } /* Literal.Number.Bin */
+.highlight .mf { color: #40a070 } /* Literal.Number.Float */
+.highlight .mh { color: #40a070 } /* Literal.Number.Hex */
+.highlight .mi { color: #40a070 } /* Literal.Number.Integer */
+.highlight .mo { color: #40a070 } /* Literal.Number.Oct */
+.highlight .sa { color: #4070a0 } /* Literal.String.Affix */
+.highlight .sb { color: #4070a0 } /* Literal.String.Backtick */
+.highlight .sc { color: #4070a0 } /* Literal.String.Char */
+.highlight .dl { color: #4070a0 } /* Literal.String.Delimiter */
+.highlight .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #4070a0 } /* Literal.String.Double */
+.highlight .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.highlight .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.highlight .sx { color: #c65d09 } /* Literal.String.Other */
+.highlight .sr { color: #235388 } /* Literal.String.Regex */
+.highlight .s1 { color: #4070a0 } /* Literal.String.Single */
+.highlight .ss { color: #517918 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #06287e } /* Name.Function.Magic */
+.highlight .vc { color: #bb60d5 } /* Name.Variable.Class */
+.highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
+.highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.highlight .vm { color: #bb60d5 } /* Name.Variable.Magic */
+.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */</style><script src=https://use.fontawesome.com/facf9fa52c.js></script><script>function flashElement(t){myElement=document.getElementById(t),myElement.classList.add("jsfh-animated-property"),setTimeout(function(){myElement.classList.remove("jsfh-animated-property")},1e3)}function setAnchor(t){history.pushState({},"",t)}function anchorOnLoad(){let t=window.location.hash.split("?")[0].split("&")[0];"#"===t[0]&&(t=t.substr(1)),t.length>0&&anchorLink(t)}function anchorLink(t){$("#"+t).parents().addBack().filter(".collapse:not(.show), .tab-pane, [role='tab']").each(function(t){if($(this).hasClass("collapse"))$(this).collapse("show");else if($(this).hasClass("tab-pane")){const t=$("a[href='#"+$(this).attr("id")+"']");t&&t.tab("show")}else"tab"===$(this).attr("role")&&$(this).tab("show")}),setTimeout(function(){let e=document.getElementById(t);e&&(e.scrollIntoView({block:"center",behavior:"smooth"}),setTimeout(function(){flashElement(t)},500))},1e3)}$(document).on("click",'a[href^="#"]',function(t){t.preventDefault(),history.pushState({},"",this.href)});</script><meta charset=utf-8><title>A connected device</title></head> <body onload=anchorOnLoad(); id=root><h1>A connected device</h1><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-info no-additional">No Additional Properties</span> <span class=description><p>Handles data for a connected device. The 'state' object is specific to the device type</p> </span> <br> <div class="badge badge-secondary">Example:</div> <br><button class="btn btn-light example-show collapsed" data-toggle=collapse data-target=#root_ex1 aria-controls=root_ex1></button><div id=root_ex1 class="collapse jumbotron examples"> <div class=highlight><pre><span></span><span class=p>{</span>
+    <span class=s2>&quot;name&quot;</span><span class=o>:</span> <span class=s2>&quot;device_esp32_leds&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;description&quot;</span><span class=o>:</span> <span class=s2>&quot;that device links one esp32 microCPU with 1 NFC reader, 1 motion sensor and 3 LEDs.&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;router&quot;</span><span class=o>:</span> <span class=s2>&quot;192.168.0.19&quot;</span><span class=p>,</span>
+    <span class=s2>&quot;state&quot;</span><span class=o>:</span> <span class=p>{</span>
+        <span class=s2>&quot;pir_state&quot;</span><span class=o>:</span> <span class=p>{</span>
+            <span class=s2>&quot;detected_something&quot;</span><span class=o>:</span> <span class=kc>false</span>
+        <span class=p>},</span>
+        <span class=s2>&quot;nfc_state&quot;</span><span class=o>:</span> <span class=p>{</span>
+            <span class=s2>&quot;is_activated&quot;</span><span class=o>:</span> <span class=kc>false</span>
+        <span class=p>},</span>
+        <span class=s2>&quot;led_state&quot;</span><span class=o>:</span> <span class=p>{</span>
+            <span class=s2>&quot;is_on&quot;</span><span class=o>:</span> <span class=kc>false</span><span class=p>,</span>
+            <span class=s2>&quot;red_value&quot;</span><span class=o>:</span> <span class=mi>144</span><span class=p>,</span>
+            <span class=s2>&quot;green_value&quot;</span><span class=o>:</span> <span class=mi>17</span><span class=p>,</span>
+            <span class=s2>&quot;blue_value&quot;</span><span class=o>:</span> <span class=mi>232</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</pre></div> </div> <div class=accordion id=accordionname> <div class=card> <div class=card-header id=headingname> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#name aria-expanded aria-controls=name onclick="setAnchor('#name')"><span class=property-name>name</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=name class="collapse property-definition-div" aria-labelledby=headingname data-parent=#accordionname> <div class=card-body><span class="badge badge-dark value-type">Type: string</span> </div> </div> </div> </div> <div class=accordion id=accordiondescription> <div class=card> <div class=card-header id=headingdescription> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#description aria-expanded aria-controls=description onclick="setAnchor('#description')"><span class=property-name>description</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=description class="collapse property-definition-div" aria-labelledby=headingdescription data-parent=#accordiondescription> <div class=card-body><span class="badge badge-dark value-type">Type: string</span> </div> </div> </div> </div> <div class=accordion id=accordionrouter> <div class=card> <div class=card-header id=headingrouter> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#router aria-expanded aria-controls=router onclick="setAnchor('#router')"><span class=property-name>router</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=router class="collapse property-definition-div" aria-labelledby=headingrouter data-parent=#accordionrouter> <div class=card-body><span class="badge badge-dark value-type">Type: object</span> <span class=description><p>It must be valid</p> </span> <br> <div class="badge badge-secondary">Example:</div> <br><div id=router_ex1 class="jumbotron examples"> <div class=highlight><pre><span></span><span class=s2>&quot;192.168.0.19&quot;</span>
+</pre></div> </div> </div> </div> </div> </div> <div class=accordion id=accordionstate> <div class=card> <div class=card-header id=headingstate> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state aria-expanded aria-controls=state onclick="setAnchor('#state')"><span class=property-name>state</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state class="collapse property-definition-div" aria-labelledby=headingstate data-parent=#accordionstate> <div class=card-body><span class="badge badge-dark value-type">Type: object</span> <span class=description><p>The state object contains all the properties that are relative to a connected device</p> </span> <div class=accordion id=accordionstate_pir_state> <div class=card> <div class=card-header id=headingstate_pir_state> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_pir_state aria-expanded aria-controls=state_pir_state onclick="setAnchor('#state_pir_state')"><span class=property-name>pir_state</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_pir_state class="collapse property-definition-div" aria-labelledby=headingstate_pir_state data-parent=#accordionstate_pir_state> <div class=card-body><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-info no-additional">No Additional Properties</span> <span class=description><p>Gives details about the motion sensor state</p> </span> <div class=accordion id=accordionstate_pir_state_detected_something> <div class=card> <div class=card-header id=headingstate_pir_state_detected_something> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_pir_state_detected_something aria-expanded aria-controls=state_pir_state_detected_something onclick="setAnchor('#state_pir_state_detected_something')"><span class=property-name>detected_something</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_pir_state_detected_something class="collapse property-definition-div" aria-labelledby=headingstate_pir_state_detected_something data-parent=#accordionstate_pir_state_detected_something> <div class=card-body><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span> <span class=description><p>Indicates wether or not the motion sensor detected something</p> </span> </div> </div> </div> </div> </div> </div> </div> </div> <div class=accordion id=accordionstate_nfc_state> <div class=card> <div class=card-header id=headingstate_nfc_state> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_nfc_state aria-expanded aria-controls=state_nfc_state onclick="setAnchor('#state_nfc_state')"><span class=property-name>nfc_state</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_nfc_state class="collapse property-definition-div" aria-labelledby=headingstate_nfc_state data-parent=#accordionstate_nfc_state> <div class=card-body><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-info no-additional">No Additional Properties</span> <span class=description><p>Represents the NFC reader state</p> </span> <div class=accordion id=accordionstate_nfc_state_is_activated> <div class=card> <div class=card-header id=headingstate_nfc_state_is_activated> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_nfc_state_is_activated aria-expanded aria-controls=state_nfc_state_is_activated onclick="setAnchor('#state_nfc_state_is_activated')"><span class=property-name>is_activated</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_nfc_state_is_activated class="collapse property-definition-div" aria-labelledby=headingstate_nfc_state_is_activated data-parent=#accordionstate_nfc_state_is_activated> <div class=card-body><span class="badge badge-dark value-type">Type: boolean</span> <span class="badge badge-success default-value">Default: false</span> <span class=description><p>true if the nfc reader has been activated. False if it has been disabled.</p> </span> </div> </div> </div> </div> </div> </div> </div> </div> <div class=accordion id=accordionstate_led_state> <div class=card> <div class=card-header id=headingstate_led_state> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_led_state aria-expanded aria-controls=state_led_state onclick="setAnchor('#state_led_state')"><span class=property-name>led_state</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_led_state class="collapse property-definition-div" aria-labelledby=headingstate_led_state data-parent=#accordionstate_led_state> <div class=card-body><span class="badge badge-dark value-type">Type: object</span> <span class="badge badge-info no-additional">No Additional Properties</span> <span class=description><p>Gives details about the led state (active or not and color values)</p> </span> <div class=accordion id=accordionstate_led_state_is_on> <div class=card> <div class=card-header id=headingstate_led_state_is_on> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_led_state_is_on aria-expanded aria-controls=state_led_state_is_on onclick="setAnchor('#state_led_state_is_on')"><span class=property-name>is_on</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_led_state_is_on class="collapse property-definition-div" aria-labelledby=headingstate_led_state_is_on data-parent=#accordionstate_led_state_is_on> <div class=card-body><span class="badge badge-dark value-type">Type: boolean</span> <span class=description><p>Indicates wether or not the leds are active</p> </span> </div> </div> </div> </div> <div class=accordion id=accordionstate_led_state_red_value> <div class=card> <div class=card-header id=headingstate_led_state_red_value> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_led_state_red_value aria-expanded aria-controls=state_led_state_red_value onclick="setAnchor('#state_led_state_red_value')"><span class=property-name>red_value</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_led_state_red_value class="collapse property-definition-div" aria-labelledby=headingstate_led_state_red_value data-parent=#accordionstate_led_state_red_value> <div class=card-body><span class="badge badge-dark value-type">Type: integer</span> <span class=description><p>Between 0 and 255</p> </span> </div> </div> </div> </div> <div class=accordion id=accordionstate_led_state_green_value> <div class=card> <div class=card-header id=headingstate_led_state_green_value> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_led_state_green_value aria-expanded aria-controls=state_led_state_green_value onclick="setAnchor('#state_led_state_green_value')"><span class=property-name>green_value</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_led_state_green_value class="collapse property-definition-div" aria-labelledby=headingstate_led_state_green_value data-parent=#accordionstate_led_state_green_value> <div class=card-body><span class="badge badge-dark value-type">Type: integer</span> <span class=description><p>Between 0 and 255</p> </span> </div> </div> </div> </div> <div class=accordion id=accordionstate_led_state_blue_value> <div class=card> <div class=card-header id=headingstate_led_state_blue_value> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_led_state_blue_value aria-expanded aria-controls=state_led_state_blue_value onclick="setAnchor('#state_led_state_blue_value')"><span class=property-name>blue_value</span> <span class="badge badge-warning required-property">Required</span></button> </h2> </div> <div id=state_led_state_blue_value class="collapse property-definition-div" aria-labelledby=headingstate_led_state_blue_value data-parent=#accordionstate_led_state_blue_value> <div class=card-body><span class="badge badge-dark value-type">Type: integer</span> <span class=description><p>Between 0 and 255</p> </span> </div> </div> </div> </div> </div> </div> </div> </div> <div class=accordion id=accordionstate_additionalProperties> <div class=card> <div class=card-header id=headingstate_additionalProperties> <h2 class=mb-0> <button class="btn btn-link property-name-button" type=button data-toggle=collapse data-target=#state_additionalProperties aria-expanded aria-controls=state_additionalProperties onclick="setAnchor('#state_additionalProperties')"><em><span class=property-name>Additional Properties</span></em></button> </h2> </div> <div id=state_additionalProperties class="collapse property-definition-div" aria-labelledby=headingstate_additionalProperties data-parent=#accordionstate_additionalProperties> <div class=card-body><p class=additional-properties>Additional Properties of any type are allowed.</p><span class="badge badge-dark value-type">Type: object</span> </div> </div> </div> </div> </div> </div> </div> </div> </body> <footer> <p class=generated-by-footer>Generated using <a href=https://github.com/coveooss/json-schema-for-humans>json-schema-for-humans</a> on 2020-11-24 at 00:03:55 +0100</p> </footer> </html>

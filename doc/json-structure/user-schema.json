@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "User",
+    "description": "Represents an user",
+    "default": {},
+    "examples": [
+        {
+            "email": "myriam.b@gmail.com",
+            "password": "blabla",
+            "firstName": "Myriam",
+            "lastName": "B",
+            "sex": true,
+            "age": 23,
+            "address": "rue bloblo",
+            "city": "Villeurbanne",
+            "country": "France"
+        }
+    ],
+    "required": [
+        "email",
+        "password",
+        "firstName",
+        "lastName",
+        "sex",
+        "age",
+        "address",
+        "city",
+        "country"
+    ],
+    "properties": {
+        "email": {
+            "$id": "#/properties/email",
+            "type": "string",
+            "description": "must be valid",
+            "examples": [
+                "myriam.b@gmail.com"
+            ]
+        },
+        "password": {
+            "type": "string",
+            "description": "must contain 6 to 32 characters"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "sex": {
+            "type": "boolean",
+            "title": "The user gender",
+            "description": "True = woman. False = man"
+        },
+        "age": {
+            "type": "integer",
+            "title": "The user age as an int",
+            "description": "Between 1 and 150"
+        },
+        "address": {
+            "type": "string",
+            "title": "The user address",
+            "description": "can store anything like streets, zip codes, etc."
+        },
+        "city": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false
+}

@@ -1,0 +1,122 @@
+{
+   "$schema":"http://json-schema.org/draft-07/schema",
+   "type":"object",
+   "title":"A connected device",
+   "description":"Handles data for a connected device. The 'state' object is specific to the device type",
+   "examples":[
+      {
+         "name":"device_esp32_leds",
+         "description":"that device links one esp32 microCPU with 1 NFC reader, 1 motion sensor and 3 LEDs.",
+         "router":"192.168.0.19",
+         "state":{
+            "pir_state":{
+               "detected_something":false
+            },
+            "nfc_state":{
+               "is_activated":false
+            },
+            "led_state":{
+               "is_on":false,
+               "red_value":144,
+               "green_value":17,
+               "blue_value":232
+            }
+         }
+      }
+   ],
+   "required":[
+      "name",
+      "description",
+      "router",
+      "state"
+   ],
+   "properties":{
+      "name":{
+         "type":"string",
+         "title":"The device name"
+      },
+      "description":{
+         "type":"string"
+      },
+      "router":{
+         "title":"The router IP",
+         "description":"It must be valid",
+         "examples":[
+            "192.168.0.19"
+         ]
+      },
+      "state":{
+         "type":"object",
+         "title":"The state object, relative to the current device",
+         "description":"The state object contains all the properties that are relative to a connected device",
+         "required":[
+            "pir_state",
+            "nfc_state",
+            "led_state"
+         ],
+         "properties":{
+            "pir_state":{
+               "type":"object",
+               "description":"Gives details about the motion sensor state",
+               "required":[
+                  "detected_something"
+               ],
+               "properties":{
+                  "detected_something":{
+                     "type":"boolean",
+                     "description":"Indicates wether or not the motion sensor detected something",
+                     "default":false
+                  }
+               },
+               "additionalProperties":false
+            },
+            "nfc_state":{
+               "type":"object",
+               "description":"Represents the NFC reader state",
+               "required":[
+                  "is_activated"
+               ],
+               "properties":{
+                  "is_activated":{
+                     "type":"boolean",
+                     "description":"true if the nfc reader has been activated. False if it has been disabled.",
+                     "default":false
+                  }
+               },
+               "additionalProperties":false
+            },
+            "led_state":{
+               "type":"object",
+               "description":"Gives details about the led state (active or not and color values)",
+               "required":[
+                  "is_on",
+                  "red_value",
+                  "green_value",
+                  "blue_value"
+               ],
+               "properties":{
+                  "is_on":{
+                     "type":"boolean",
+                     "description":"Indicates wether or not the leds are active"
+                  },
+                  "red_value":{
+                     "type":"integer",
+                     "description":"Between 0 and 255"
+                  },
+                  "green_value":{
+                     "type":"integer",
+                     "description":"Between 0 and 255"
+                  },
+                  "blue_value":{
+                     "type":"integer",
+                     "description":"Between 0 and 255"
+                  }
+               },
+               "additionalProperties":false
+            }
+         },
+         "additionalProperties":true
+      }
+   },
+   "additionalProperties":false
+}
