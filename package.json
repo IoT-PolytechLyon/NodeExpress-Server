@@ -1,0 +1,28 @@
+{
+  "name": "iot-2a-server",
+  "version": "1.0.0",
+  "description": "API that handles connected devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IoT-PolytechLyon/iot-2a-server.git"
+  },
+  "keywords": [
+    "iot",
+    "nodeexpress",
+    "javascript",
+    "polytech"
+  ],
+  "author": "Myriam & Dorian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IoT-PolytechLyon/iot-2a-server/issues"
+  },
+  "homepage": "https://github.com/IoT-PolytechLyon/iot-2a-server#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
