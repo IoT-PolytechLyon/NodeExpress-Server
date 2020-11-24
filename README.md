@@ -10,7 +10,7 @@
 ## user
 
 Take a look at :
-- [**user json schema (html, easier to read)**](doc/json-structure/user-schema.html)
+- [**user json schema (html, easier to read)**](https://iot-polytechlyon.github.io/user-schema.html)
 - [_user json schema (json)_](doc/json-structure/user-schema.json)
 
 Example :
@@ -33,7 +33,7 @@ Example :
 ## connectedDevice
 
 Take a look at :
-- [**connectedDevice json schema (html, easier to read)**](doc/json-structure/connectedDevice-schema.html)
+- [**connectedDevice json schema (html, easier to read)**](https://iot-polytechlyon.github.io/connectedDevice-schema.html)
 - [_connectedDevice json schema (json)_](doc/json-structure/connectedDevice-schema.json)
 
 Example :
