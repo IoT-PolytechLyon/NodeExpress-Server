@@ -1,8 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import mongodb from 'mongodb';
 import bodyParser from 'body-parser';
-import user, {default as User} from './src/model/user.js';
+import {default as User} from './src/models/user.js';
 
 const Schema = mongoose.Schema;
 
