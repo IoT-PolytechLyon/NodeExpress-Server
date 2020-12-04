@@ -48,13 +48,12 @@ async function findAllConnectedDevices(req, res) {
 
 function findConnectedDevicesById(req, res) {
     try {
-        console.log(req.params.id)
         ConnectedDevice.findById(req.params.id, function(err, connectedDevice) {
-            if (err){ 
+            if (err) { 
                 console.log(err); 
                 return res.status(404).json({message: "Connected device n°" + req.params.id + " is not found."});
             } 
-            else{  
+            else {  
                 res.status(200).json(connectedDevice);
             } 
         });
@@ -67,13 +66,36 @@ function findConnectedDevicesById(req, res) {
 
 function updateConnectedDeviceById(req, res) {
 
-    const connectedDevice = ConnectedDevice.findById(req.params.id);
+    ConnectedDevice.findById(req.params.id, function(err, connectedDevice) {
 
-    if (!connectedDevice) {
-        return res.status(404).json({message: "Erreur"});
-    }
+        if (err) {
+            return res.status(404).json({message: "Connected device n°" + req.params.id + " is not found."});
+        }
+        else {
+            connectedDevice.state.pir_state.detected_something = req.body.state.pir_state.detected_something;
+            connectedDevice.state.nfc_state.is_activated = req.body.state.nfc_state.is_activated;
+            connectedDevice.state.led_state.is_on = req.body.state.led_state.is_on;
+            connectedDevice.state.led_state.red_value = req.body.state.led_state.red_value;
+            connectedDevice.state.led_state.green_value = req.body.state.led_state.green_value;
+            connectedDevice.state.led_state.blue_value = req.body.state.led_state.blue_value;
+            connectedDevice.name = req.body.name;
+            connectedDevice.description = req.body.description;
+            connectedDevice.router = req.body.router;
+            connectedDevice.__v = req.body.__v;
 
-    res.status(200).json(connectedDevice);
+            //save the connected device and check for errors
+            connectedDevice.save(function (err) {
+                if(err) {
+                    res.json(err);
+                }
+                res.json({
+                    message: 'Connected Device updated.',
+                    data: connectedDevice
+                });
+            })
+        }
+
+    });
 
 }
 
