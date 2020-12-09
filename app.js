@@ -35,6 +35,3 @@ app.get('/connected-devices', getAllConnectedDevices);
 app.get('/connected-devices/:id', getConnectedDeviceById)
 
 app.put('/connected-devices/:id', putConnectedDeviceById)
-
-
-// TESTER ET CONTINUER LE PUT
