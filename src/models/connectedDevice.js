@@ -56,7 +56,7 @@ const ConnectedDeviceSchema = new Schema({
                 required: true
             },
             blue_value: {
-                type: String,
+                type: Number,
                 min: 0,
                 max: 255,
                 required: true

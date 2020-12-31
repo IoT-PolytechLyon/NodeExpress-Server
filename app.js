@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import {signUp, signIn} from './src/controllers/UserController.js'
 import {newConnectedDevice, getAllConnectedDevices, getConnectedDeviceById, putConnectedDeviceById} from './src/controllers/ConnectedDeviceController.js'
+import {initBadges, findAllNfc} from './src/controllers/NfcController.js';
 
 const app = express();
 
@@ -23,6 +24,8 @@ app.listen(8081, () =>
     console.log("Server is running");
 });
 
+initBadges();
+
 
 app.post('/sign-up', signUp);
 
@@ -32,6 +35,8 @@ app.post('/connected-devices', newConnectedDevice);
 
 app.get('/connected-devices', getAllConnectedDevices);
 
-app.get('/connected-devices/:id', getConnectedDeviceById)
+app.get('/connected-devices/:id', getConnectedDeviceById);
 
-app.put('/connected-devices/:id', putConnectedDeviceById)
+app.get('/badges', findAllNfc);
+
+app.put('/connected-devices/:id', putConnectedDeviceById);

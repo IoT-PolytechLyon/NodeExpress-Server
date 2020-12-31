@@ -60,7 +60,6 @@ Example :
 }
 ```
 
-
 # Getting started
 
 ## Installing MongoDB
@@ -75,4 +74,7 @@ Check it out for more insight.
 
 Otherwise, here are some tips/examples. _Use these as reminders_ :
 
-_coming soon..._
+## Start the project
+
+`nodemon app.js`
+
