@@ -20,6 +20,10 @@ const ConnectedDeviceSchema = new Schema({
         required: true,
         validate: [validateRouter, "Please fill a valid router"]
     },
+    port: {
+        type: Number,
+        required: true
+    },
     state: 
     {
         pir_state:
@@ -40,7 +44,8 @@ const ConnectedDeviceSchema = new Schema({
         led_state:
         {
             is_on: {
-                type: String,
+                type: Boolean,
+                default: false,
                 required: true
             },
             red_value: {

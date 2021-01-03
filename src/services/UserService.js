@@ -10,17 +10,7 @@ function createNewUserAccount(req, res) {
             //throw "The email already exist";
         }
         else {
-            const user = new User({
-                email: req.body.email,
-                password: req.body.password,
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                sex: req.body.sex,
-                age: req.body.age,
-                adress: req.body.adress,
-                city: req.body.city,
-                country: req.body.country
-            });
+            const user = new User(req.body);
         
             user.save().then(data => {
                 res.status(201).json({message: "L'utilisateur " + req.body.firstName + " " + req.body.lastName + " (" + req.body.email + ") a bien été ajouté."});
