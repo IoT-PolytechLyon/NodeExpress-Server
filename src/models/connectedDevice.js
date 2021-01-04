@@ -9,20 +9,16 @@ var validateRouter = function(router) {
 const ConnectedDeviceSchema = new Schema({
     name: {
         type: String,
-        required: true
     },
     description: {
         type: String,
-        required: true
     },
     router: {
         type: String,
-        required: true,
         validate: [validateRouter, "Please fill a valid router"]
     },
     port: {
         type: Number,
-        required: true
     },
     state: 
     {

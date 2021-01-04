@@ -4,17 +4,17 @@ async function insertNfcBadges()
 {
     const nfc1 = new Nfc
     ({
-        nfcId: "UID 67 CB F0 D9"
+        nfcId: "67 CB F0 D9"
     });
 
     const nfc2 = new Nfc
     ({
-        nfcId: "UID B9 FE B0 79"
+        nfcId: "B9 FE B0 79"
     });
 
     const nfc3 = new Nfc
     ({
-        nfcId: "UID 40 69 B0 79"
+        nfcId: "40 69 B0 79"
     });
 
     const nfcs = await Nfc.find();

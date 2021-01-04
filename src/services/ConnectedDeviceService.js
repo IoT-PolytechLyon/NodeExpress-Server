@@ -69,7 +69,16 @@ function updateConnectedDeviceById(req, res) {
             return res.status(404).json({message: "Connected device n°" + req.params.id + " is not found."});
         }
         else {
-            connectedDevice = req.body;
+            connectedDevice.state.pir_state.detected_something = req.body.state.pir_state.detected_something;
+            connectedDevice.state.nfc_state.is_activated = req.body.state.nfc_state.is_activated;
+            connectedDevice.state.led_state.is_on = req.body.state.led_state.is_on;
+            connectedDevice.state.led_state.red_value = req.body.state.led_state.red_value;
+            connectedDevice.state.led_state.green_value = req.body.state.led_state.green_value;
+            connectedDevice.state.led_state.blue_value = req.body.state.led_state.blue_value;
+            connectedDevice.name = req.body.name;
+            connectedDevice.description = req.body.description;
+            connectedDevice.router = req.body.router;
+            connectedDevice.__v = req.body.__v;
             //save the connected device and check for errors
             connectedDevice.save(function (err) {
                 if(err) {
