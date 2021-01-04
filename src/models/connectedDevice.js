@@ -9,16 +9,20 @@ var validateRouter = function(router) {
 const ConnectedDeviceSchema = new Schema({
     name: {
         type: String,
+        required: true
     },
     description: {
         type: String,
+        required: true
     },
     router: {
         type: String,
-        validate: [validateRouter, "Please fill a valid router"]
+        validate: [validateRouter, "Please fill a valid router"],
+        required: true
     },
     port: {
         type: Number,
+        default: 8080
     },
     state: 
     {
@@ -26,7 +30,7 @@ const ConnectedDeviceSchema = new Schema({
         {
             detected_something: {
                 type: Boolean,
-                required: true
+                default: false
             }
         },
         nfc_state:
@@ -34,7 +38,6 @@ const ConnectedDeviceSchema = new Schema({
             is_activated: {
                 type: Boolean,
                 default: false,
-                required: true
             }
         },
         led_state:
@@ -42,25 +45,24 @@ const ConnectedDeviceSchema = new Schema({
             is_on: {
                 type: Boolean,
                 default: false,
-                required: true
             },
             red_value: {
                 type: Number,
                 min: 0,
                 max: 255,
-                required: true
+                default: 0,
             },
             green_value: {
                 type: Number,
                 min: 0,
                 max: 255,
-                required: true
+                default: 0,
             },
             blue_value: {
                 type: Number,
                 min: 0,
                 max: 255,
-                required: true
+                default: 0,
             }
         }
     }
