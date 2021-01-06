@@ -63,9 +63,8 @@ function findConnectedDeviceByName(req, res)
 
 function updateConnectedDeviceById(req, res) {
 
-    ConnectedDevice.findById(req.params.id, function(err, connectedDevice) {
-
-        if (err) {
+    ConnectedDevice.findById(req.params.id, function(err1, connectedDevice) {
+        if (err1) {
             return res.status(404).json({message: "Connected device n°" + req.params.id + " is not found."});
         }
         else {
@@ -75,19 +74,21 @@ function updateConnectedDeviceById(req, res) {
             connectedDevice.state.led_state.red_value = req.body.state.led_state.red_value;
             connectedDevice.state.led_state.green_value = req.body.state.led_state.green_value;
             connectedDevice.state.led_state.blue_value = req.body.state.led_state.blue_value;
-            connectedDevice.name = req.body.name;
-            connectedDevice.description = req.body.description;
-            connectedDevice.router = req.body.router;
-            connectedDevice.__v = req.body.__v;
+
             //save the connected device and check for errors
-            connectedDevice.save(function (err) {
-                if(err) {
-                    res.json(err);
+            connectedDevice.save(function (err2) {
+                if(err2) {
+                    console.log(err2);
+                    res.status(400).json(err2);
                 }
-                res.json({
-                    message: 'Connected Device updated.',
-                    data: connectedDevice
-                });
+                else
+                {
+                    //TODO : POST on esp32 URL the state object. (POST ip:8080/led)
+                    res.status(200).json({
+                        message: 'Connected Device updated.',
+                        data: connectedDevice
+                    });
+                }
             })
         }
 
