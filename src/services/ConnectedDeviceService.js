@@ -1,5 +1,8 @@
 import ConnectedDevice from '../models/connectedDevice.js';
 
+import axios from 'axios';
+import esp32 from '../config/esp32.conf.js';
+
 function createNewConnectedDevice(req, res) {
 
     const connectedDevice = new ConnectedDevice(req.body);
@@ -83,13 +86,22 @@ function updateConnectedDeviceById(req, res) {
                 }
                 else
                 {
-                    //TODO : POST on esp32 URL the state object. (POST ip:8080/led)
+                    console.log("Sending POST to esp32 : ")
+                    console.log(connectedDevice);
+                    axios.post("http://" + esp32.ip + ":" + esp32.port + esp32.post_led_endpoint, connectedDevice).then(res =>
+                    {
+                        console.log(res);
+                    }).catch(error =>
+                    {
+                        console.log(error);
+                    })
                     res.status(200).json({
                         message: 'Connected Device updated.',
                         data: connectedDevice
                     });
+
                 }
-            })
+            });
         }
 
     });
