@@ -86,11 +86,10 @@ function updateConnectedDeviceById(req, res) {
                 }
                 else
                 {
-                    console.log("Sending POST to esp32 : ")
-                    console.log(connectedDevice);
+                    console.log("Sending POST to esp32")
+                    //console.log(connectedDevice);
                     axios.post("http://" + esp32.ip + ":" + esp32.port + esp32.post_led_endpoint, connectedDevice).then(res =>
                     {
-                        console.log(res);
                     }).catch(error =>
                     {
                         console.log(error);
