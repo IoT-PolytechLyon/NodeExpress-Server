@@ -1,8 +1,6 @@
 # Polytech - IoT API Server
 **BENALI Myriam & NAAJI Dorian**
 
-
-- [Demo](https://www.youtube.com/watch?v=3qnKhdDAtUE)
 - [_Project report_](https://etuunivlyon1fr-my.sharepoint.com/:w:/g/personal/dorian_naaji_etu_univ-lyon1_fr/EQfUNHM7-KVDkyjKl9hqu0cBM_7lnZkNISpM6ZLtHlbqIA?e=0QjyKM)
 - [_Wireframe of the client app that will consume the API_](https://app.moqups.com/3cfPlxezOO/view/page/ae8fe8eb0)
 
