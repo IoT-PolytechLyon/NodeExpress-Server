@@ -1,5 +1,10 @@
 import User from '../models/user.js';
 
+/**
+ * Adds a new user account
+ * @param {*} req request
+ * @param {*} res result
+ */
 function createNewUserAccount(req, res) {
 
     emailAlreadyExist(req.body.email).then(function(alreadyExist) {
@@ -25,6 +30,11 @@ function createNewUserAccount(req, res) {
     })
 }
 
+/**
+ * User sign in
+ * @param {*} req request
+ * @param {*} res result
+ */
 function userConnection(req, res) {
     User.findOne({email: req.body.email}, function(err, specificUser) {
 
@@ -50,7 +60,10 @@ function userConnection(req, res) {
     });
 }
 
-
+/**
+ * If the email already exist into the database
+ * @param {*} email user email
+ */
 function emailAlreadyExist(email) {
     return User.findOne({email: email}).then(function(result) {
         return result != null;

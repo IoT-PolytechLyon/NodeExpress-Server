@@ -3,6 +3,11 @@ import ConnectedDevice from '../models/connectedDevice.js';
 import axios from 'axios';
 import esp32 from '../config/esp32.conf.js';
 
+/**
+ * Adds a new connected device
+ * @param {*} req request
+ * @param {*} res result
+ */
 function createNewConnectedDevice(req, res) {
 
     const connectedDevice = new ConnectedDevice(req.body);
@@ -17,7 +22,11 @@ function createNewConnectedDevice(req, res) {
 
 }
 
-
+/**
+ * Gets all the connected devices
+ * @param {*} req request
+ * @param {*} res result
+ */
 async function findAllConnectedDevices(req, res) {
     try {
         const connectedDevices = await ConnectedDevice.find();
@@ -27,6 +36,11 @@ async function findAllConnectedDevices(req, res) {
     }
 }
 
+/**
+ * Gets connected device by id
+ * @param {*} req request
+ * @param {*} res result
+ */
 function findConnectedDevicesById(req, res) {
     try {
         ConnectedDevice.findById(req.params.id, function(err, connectedDevice) {
@@ -45,6 +59,11 @@ function findConnectedDevicesById(req, res) {
     }
 }
 
+/**
+ * Gets connected device by name
+ * @param {*} req request
+ * @param {*} res result
+ */
 function findConnectedDeviceByName(req, res)
 {
     try {
@@ -64,6 +83,11 @@ function findConnectedDeviceByName(req, res)
     }
 }
 
+/**
+ * Updating a spectific connected device by id
+ * @param {*} req request
+ * @param {*} res result
+ */
 function updateConnectedDeviceById(req, res) {
 
     ConnectedDevice.findById(req.params.id, function(err1, connectedDevice) {

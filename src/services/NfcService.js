@@ -1,5 +1,8 @@
 import Nfc from '../models/nfc.js'
 
+/**
+ * Insert NFC badges into the database
+ */
 async function insertNfcBadges()
 {
     const nfc1 = new Nfc
@@ -37,6 +40,11 @@ async function insertNfcBadges()
     }
 }
 
+/**
+ * Gets all the NFC badges
+ * @param {*} req request
+ * @param {*} res result
+ */
 async function findAllNfcBadges(req, res)
 {
     try

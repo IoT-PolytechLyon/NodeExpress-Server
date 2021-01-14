@@ -1,11 +1,18 @@
 import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
+/**
+ * Router format validation (IP address)
+ * @param {*} router router to be tested
+ */
 var validateRouter = function(router) {
     var format = /^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     return format.test(router);
 }
 
+/**
+ * Connected device collection schema
+ */
 const ConnectedDeviceSchema = new Schema({
     name: {
         type: String,

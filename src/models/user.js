@@ -1,10 +1,17 @@
 import mongoose from 'mongoose';
 
+/**
+ * Email format validation
+ * @param {*} email email to be tested
+ */
 var validateEmail = function(email) {
     var format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return format.test(email);
 }
 
+/**
+ * User collection schema
+ */
 var  userSchema = mongoose.Schema({
     email: {
         type: String,

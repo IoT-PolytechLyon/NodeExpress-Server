@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 const url = 'mongodb://127.0.0.1:27017/iot-2a';
 
+// Connecting to Mongoose
 mongoose.connect(url, {useUnifiedTopology:true, useNewUrlParser:true});
 mongoose.connection
 .on('error', console.error.bind(console, 'connection error:'))
@@ -19,25 +20,35 @@ mongoose.connection
     console.log("Connecté à Mongoose")
 });
 
+// Starts listening on port 8081
 app.listen(8081, () =>
 {
     console.log("Server is running");
 });
 
+// Adding NFC badges into the database
 initBadges();
 
-app.post('/sign-up', signUp);
-
+// User sign in
 app.post('/sign-in', signIn);
 
-app.post('/connected-devices', newConnectedDevice);
+// User sign up
+app.post('/sign-up', signUp);
 
+// Retrieving all connected devices
 app.get('/connected-devices', getAllConnectedDevices);
 
+// Retrieving a connected device by id
 app.get('/connected-devices/:id', getConnectedDeviceById);
 
+// Retrieving a connected device by name
 app.get('/connected-devices/by-name/:name', getConnectedDeviceByName);
 
-app.get('/badges', findAllNfc);
+// Adding a new connected device
+app.post('/connected-devices', newConnectedDevice);
 
+// Updating a connected device by id
 app.put('/connected-devices/:id', putConnectedDeviceById);
+
+// Retrieving all NFC badges
+app.get('/badges', findAllNfc);

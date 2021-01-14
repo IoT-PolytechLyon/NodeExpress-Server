@@ -1,3 +1,6 @@
+/**
+ * ESP32 configuration
+ */
 export default
 {
     ip:"192.168.0.11",
