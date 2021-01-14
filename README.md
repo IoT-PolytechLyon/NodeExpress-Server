@@ -73,8 +73,6 @@ with the installer.
 [MongoDB documentation](https://docs.mongodb.com/manual/tutorial/getting-started/) is really complete.
 Check it out for more insight.
 
-Otherwise, here are some tips/examples. _Use these as reminders_ :
-
 ## Start the project
 
 `nodemon app.js`
