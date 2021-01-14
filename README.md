@@ -1,7 +1,7 @@
 # Polytech - IoT API Server
 **BENALI Myriam & NAAJI Dorian**
 
-- [_Project report_](https://etuunivlyon1fr-my.sharepoint.com/:w:/g/personal/dorian_naaji_etu_univ-lyon1_fr/EQfUNHM7-KVDkyjKl9hqu0cBM_7lnZkNISpM6ZLtHlbqIA?e=0QjyKM)
+- [_Project report_](https://github.com/IoT-PolytechLyon/iot-2a-server/blob/main/doc/RAPPORT_IoT-BENALI_Myriam-NAAJI_Dorian.pdf)
 - [_Wireframe of the client app that will consume the API_](https://app.moqups.com/3cfPlxezOO/view/page/ae8fe8eb0)
 
 # API json objects structure
