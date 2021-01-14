@@ -3,6 +3,8 @@
 
 - [_Project report_](https://github.com/IoT-PolytechLyon/iot-2a-server/blob/main/doc/RAPPORT_IoT-BENALI_Myriam-NAAJI_Dorian.pdf)
 - [_Wireframe of the client app that will consume the API_](https://app.moqups.com/3cfPlxezOO/view/page/ae8fe8eb0)
+- [_Vidéo de démonstration objet connecté et écosystème applicatif global_](https://www.youtube.com/watch?v=3qnKhdDAtUE)
+- [ Vidéo de démonstration application mobile ](https://www.youtube.com/watch?v=WWNtsDXCYrM)
 
 # API json objects structure
 
